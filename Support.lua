@@ -3,6 +3,7 @@ local supports = {};
 local games = {
     ["621129760"] = "Kat",
     ["6514923093"] = "Realistic-Guns",
+    ["12355337193"] = "Murderers-VS-Sheriffs-Duels",
 }
 
 function supports:CheckGm()
