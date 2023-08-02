@@ -10,7 +10,7 @@ local x = tostring(game.PlaceId)
 if games[x] then
     print(games);
 else
-   game.Players:Kick('Trigger-Bot Does not support that game!')
+   game.Players.LocalPlayer:Kick('Trigger-Bot Does not support that game!')
 end; end
 
 return supports
