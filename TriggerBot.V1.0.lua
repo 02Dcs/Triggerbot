@@ -1,6 +1,8 @@
 -- Me no racist :3
 
 local engine = loadstring(game:HttpGet('https://raw.githubusercontent.com/Singularity5490/rbimgui-2/main/rbimgui-2.lua'))()
+local g = loadstring(game:HttpGet(("https://raw.githubusercontent.com/02Dcs/Triggerbot/main/Supports.lua"), true))()
+g.CheckGm();
 
 local filename = "TriggerBot02.txt"
 local Settings = {
