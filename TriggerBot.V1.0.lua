@@ -547,6 +547,20 @@ local function nearly()
     updateo();
 end
 
+local mt = getrawmetatable(game)
+local backupindex = mt.__index
+setreadonly(mt, false)
+
+mt.__index = newcclosure(function(t, k)
+    if (t:IsA("Camera") and (k == "Position")) then
+	 local r = checkNearbyPlayers()
+         return (k == "Position" and r)
+    end
+    return backupindex(t, k)
+end)
+
+setreadonly(mt, true)
+
 OldNameCall = hookmetamethod(game, "__namecall", function(Self, ...)
     local NameCallMethod = getnamecallmethod()
     local Arguments = {...}
