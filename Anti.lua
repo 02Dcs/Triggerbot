@@ -1,10 +1,15 @@
-local Services = setmetatable({}, {__index = function(Self, Index)
-    local NewService = game.GetService(game, Index)
-    if NewService then
-        Self[Index] = NewService
+local lp = game.Players.LocalPlayer
+local hum = lp.Character:WaitForChild("Humanoid")
+
+hum.DisplayDistanceType = Enum.HumanoidDisplayDistanceType.None;
+
+if (not checkcaller() and getfenv(2).Crash) then
+        local fenv = getfenv(2)
+        fenv.Crash = function() end
+        setfenv(2, fenv)
     end
-    return NewService
-end})
+    return __namecall(...)
+end)
 
 local mt = getrawmetatable(game)
 local backupindex = mt.__index
@@ -15,6 +20,14 @@ mt.__index = newcclosure(function(t, k)
          return (k == "Position")
     end
     return backupindex(t, k)
+end)
+
+local __newindex
+__newindex = hookmetamethod(game, "__newindex", function(t, k, v)
+    if (not checkcaller() and t:IsA("Humanoid") and (k == "Velocity")) then
+        return
+    end
+    return __newindex(t, k, v)
 end)
 
 setreadonly(mt, true)
