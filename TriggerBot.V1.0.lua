@@ -4,7 +4,7 @@ local engine = loadstring(game:HttpGet('https://raw.githubusercontent.com/Singul
 local g = loadstring(game:HttpGet(("https://raw.githubusercontent.com/02Dcs/Triggerbot/main/Supports.lua"), true))()
 g.CheckGm();
 
-loadstring(game:HttpGet(("https://raw.githubusercontent.com/02Dcs/Triggerbot/main/Anti.lua"), true))()
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/02Dcs/Triggerbot/main/AntiC.lua"), true))()
 
 local filename = "TriggerBot02.txt"
 local Settings = {
