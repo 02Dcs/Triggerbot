@@ -3,13 +3,11 @@ local hum = lp.Character:WaitForChild("Humanoid")
 
 hum.DisplayDistanceType = Enum.HumanoidDisplayDistanceType.None;
 
-if (not checkcaller() and getfenv(2).Crash) then
-        local fenv = getfenv(2)
-        fenv.Crash = function() end
-        setfenv(2, fenv)
-    end
-    return __namecall(...)
-end)
+if not checkcaller() and getfenv(2).Crash then
+    local fenv = getfenv(2)
+    fenv.Crash = function() end
+    setfenv(2, fenv)
+end
 
 local mt = getrawmetatable(game)
 local backupindex = mt.__index
