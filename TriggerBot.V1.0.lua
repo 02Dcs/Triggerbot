@@ -536,13 +536,13 @@ local function nearly()
             end
             ca.CFrame = CFrame.new(localhd.Position + dir * cameraof.Z, tahd.Position) 
 
-            for _, v in ipairs(localch:GetDescendants()) do
+           --[[ for _, v in ipairs(localch:GetDescendants()) do
                 if v:IsA'BasePart' then
                     v.Transparency = 1
                 elseif v:IsA'Decal' then
                     v.Transparency = 1
                 end
-            end
+            end]]
             tr();
         end
     end
